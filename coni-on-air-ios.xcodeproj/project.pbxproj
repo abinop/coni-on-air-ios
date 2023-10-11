@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		120071452A82783100670B7F /* ProducerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120071442A82783100670B7F /* ProducerView.swift */; };
+		124F9FB62A7A81D400AB2A0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 124F9FB52A7A81D400AB2A0D /* LaunchScreen.storyboard */; };
+		124F9FB92A7A825D00AB2A0D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 124F9FB82A7A825D00AB2A0D /* Localizable.strings */; };
+		125AD49D2A826702007A43D2 /* CacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AD49C2A826702007A43D2 /* CacheAsyncImage.swift */; };
+		127043902A7A8448006A9112 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1270438F2A7A8448006A9112 /* FirebaseCrashlytics */; };
+		127043922A7A8448006A9112 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 127043912A7A8448006A9112 /* FirebaseDatabase */; };
+		127043942A7A8448006A9112 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 127043932A7A8448006A9112 /* FirebaseDatabaseSwift */; };
+		127043962A7A8485006A9112 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 127043952A7A8485006A9112 /* GoogleService-Info.plist */; };
+		1270439A2A7A86D3006A9112 /* FRadioPlayer in Frameworks */ = {isa = PBXBuildFile; productRef = 127043992A7A86D3006A9112 /* FRadioPlayer */; };
+		1270439E2A7A86F4006A9112 /* RadioView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270439C2A7A86F4006A9112 /* RadioView-ViewModel.swift */; };
+		127043A12A7A872D006A9112 /* PlayIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127043A02A7A872D006A9112 /* PlayIndicatorView.swift */; };
+		127043A42A7A8767006A9112 /* NowPlayingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127043A32A7A8767006A9112 /* NowPlayingData.swift */; };
+		127043A62A7A88B3006A9112 /* Producer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127043A52A7A88B3006A9112 /* Producer.swift */; };
+		127043AD2A7A88BE006A9112 /* ProducerView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127043A82A7A88BE006A9112 /* ProducerView-ViewModel.swift */; };
+		127043AF2A7A88BE006A9112 /* ProducersView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127043AA2A7A88BE006A9112 /* ProducersView-ViewModel.swift */; };
+		127043B02A7A88BE006A9112 /* ProducersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127043AB2A7A88BE006A9112 /* ProducersView.swift */; };
+		127043B12A7A88BE006A9112 /* ProducerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127043AC2A7A88BE006A9112 /* ProducerRow.swift */; };
+		127043B42A7A8959006A9112 /* AttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127043B32A7A8959006A9112 /* AttributedText.swift */; };
+		127043BA2A7A8B6F006A9112 /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127043B62A7A8B6F006A9112 /* MessageRow.swift */; };
+		127043BB2A7A8B6F006A9112 /* ChatView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127043B72A7A8B6F006A9112 /* ChatView-ViewModel.swift */; };
+		127043BC2A7A8B6F006A9112 /* SendMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127043B82A7A8B6F006A9112 /* SendMessageView.swift */; };
+		127043BD2A7A8B6F006A9112 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127043B92A7A8B6F006A9112 /* ChatView.swift */; };
+		127043BF2A7A8B76006A9112 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127043BE2A7A8B76006A9112 /* Message.swift */; };
+		127043C12A7A8BD4006A9112 /* Ext_DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127043C02A7A8BD4006A9112 /* Ext_DateFormatter.swift */; };
+		128307202A7A7E7200054335 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283071F2A7A7E7200054335 /* TabBarButton.swift */; };
+		12959CEA2A7A786700EF0DD5 /* coni_on_air_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12959CE92A7A786700EF0DD5 /* coni_on_air_iosApp.swift */; };
+		12959CEC2A7A786700EF0DD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12959CEB2A7A786700EF0DD5 /* ContentView.swift */; };
+		12959CEE2A7A786800EF0DD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12959CED2A7A786800EF0DD5 /* Assets.xcassets */; };
+		12959CF12A7A786800EF0DD5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12959CF02A7A786800EF0DD5 /* Preview Assets.xcassets */; };
+		12959CF82A7A78CA00EF0DD5 /* Environment.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 12959CF72A7A78CA00EF0DD5 /* Environment.xcconfig */; };
+		12A74A1F2A813C8300298F50 /* View+ConditionalModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A74A1E2A813C8300298F50 /* View+ConditionalModifier.swift */; };
+		786FE6192AD6EB82003B5A9D /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786FE6182AD6EB82003B5A9D /* RadioView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		120071442A82783100670B7F /* ProducerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProducerView.swift; sourceTree = "<group>"; };
+		124F9FB52A7A81D400AB2A0D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		124F9FB82A7A825D00AB2A0D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		125AD49C2A826702007A43D2 /* CacheAsyncImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheAsyncImage.swift; sourceTree = "<group>"; };
+		127043952A7A8485006A9112 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1270439C2A7A86F4006A9112 /* RadioView-ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RadioView-ViewModel.swift"; sourceTree = "<group>"; };
+		127043A02A7A872D006A9112 /* PlayIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayIndicatorView.swift; sourceTree = "<group>"; };
+		127043A32A7A8767006A9112 /* NowPlayingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingData.swift; sourceTree = "<group>"; };
+		127043A52A7A88B3006A9112 /* Producer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Producer.swift; sourceTree = "<group>"; };
+		127043A82A7A88BE006A9112 /* ProducerView-ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProducerView-ViewModel.swift"; sourceTree = "<group>"; };
+		127043AA2A7A88BE006A9112 /* ProducersView-ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProducersView-ViewModel.swift"; sourceTree = "<group>"; };
+		127043AB2A7A88BE006A9112 /* ProducersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProducersView.swift; sourceTree = "<group>"; };
+		127043AC2A7A88BE006A9112 /* ProducerRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProducerRow.swift; sourceTree = "<group>"; };
+		127043B32A7A8959006A9112 /* AttributedText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedText.swift; sourceTree = "<group>"; };
+		127043B62A7A8B6F006A9112 /* MessageRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageRow.swift; sourceTree = "<group>"; };
+		127043B72A7A8B6F006A9112 /* ChatView-ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChatView-ViewModel.swift"; sourceTree = "<group>"; };
+		127043B82A7A8B6F006A9112 /* SendMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageView.swift; sourceTree = "<group>"; };
+		127043B92A7A8B6F006A9112 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		127043BE2A7A8B76006A9112 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		127043C02A7A8BD4006A9112 /* Ext_DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ext_DateFormatter.swift; sourceTree = "<group>"; };
+		1283071F2A7A7E7200054335 /* TabBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
+		12959CE62A7A786700EF0DD5 /* coni-on-air-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "coni-on-air-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		12959CE92A7A786700EF0DD5 /* coni_on_air_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coni_on_air_iosApp.swift; sourceTree = "<group>"; };
+		12959CEB2A7A786700EF0DD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		12959CED2A7A786800EF0DD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		12959CF02A7A786800EF0DD5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		12959CF72A7A78CA00EF0DD5 /* Environment.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Environment.xcconfig; sourceTree = "<group>"; };
+		12959CF92A7A7DE500EF0DD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		12A74A1E2A813C8300298F50 /* View+ConditionalModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+ConditionalModifier.swift"; sourceTree = "<group>"; };
+		786FE6182AD6EB82003B5A9D /* RadioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		12959CE32A7A786700EF0DD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				127043942A7A8448006A9112 /* FirebaseDatabaseSwift in Frameworks */,
+				127043922A7A8448006A9112 /* FirebaseDatabase in Frameworks */,
+				1270439A2A7A86D3006A9112 /* FRadioPlayer in Frameworks */,
+				127043902A7A8448006A9112 /* FirebaseCrashlytics in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		124F9FB72A7A824000AB2A0D /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				124F9FB82A7A825D00AB2A0D /* Localizable.strings */,
+			);
+			path = Languages;
+			sourceTree = "<group>";
+		};
+		1270439B2A7A86F4006A9112 /* Radio */ = {
+			isa = PBXGroup;
+			children = (
+				786FE6182AD6EB82003B5A9D /* RadioView.swift */,
+				127043A02A7A872D006A9112 /* PlayIndicatorView.swift */,
+				1270439C2A7A86F4006A9112 /* RadioView-ViewModel.swift */,
+			);
+			path = Radio;
+			sourceTree = "<group>";
+		};
+		127043A22A7A8767006A9112 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				127043BE2A7A8B76006A9112 /* Message.swift */,
+				127043A52A7A88B3006A9112 /* Producer.swift */,
+				127043A32A7A8767006A9112 /* NowPlayingData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		127043A72A7A88BE006A9112 /* Producers */ = {
+			isa = PBXGroup;
+			children = (
+				120071442A82783100670B7F /* ProducerView.swift */,
+				127043A82A7A88BE006A9112 /* ProducerView-ViewModel.swift */,
+				127043AA2A7A88BE006A9112 /* ProducersView-ViewModel.swift */,
+				127043AB2A7A88BE006A9112 /* ProducersView.swift */,
+				127043AC2A7A88BE006A9112 /* ProducerRow.swift */,
+			);
+			path = Producers;
+			sourceTree = "<group>";
+		};
+		127043B22A7A8946006A9112 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				12A74A1E2A813C8300298F50 /* View+ConditionalModifier.swift */,
+				127043C02A7A8BD4006A9112 /* Ext_DateFormatter.swift */,
+				127043B32A7A8959006A9112 /* AttributedText.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		127043B52A7A8B6F006A9112 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				127043B62A7A8B6F006A9112 /* MessageRow.swift */,
+				127043B72A7A8B6F006A9112 /* ChatView-ViewModel.swift */,
+				127043B82A7A8B6F006A9112 /* SendMessageView.swift */,
+				127043B92A7A8B6F006A9112 /* ChatView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		12959CDD2A7A786700EF0DD5 = {
+			isa = PBXGroup;
+			children = (
+				127043952A7A8485006A9112 /* GoogleService-Info.plist */,
+				12959CF72A7A78CA00EF0DD5 /* Environment.xcconfig */,
+				12959CE82A7A786700EF0DD5 /* coni-on-air-ios */,
+				12959CE72A7A786700EF0DD5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		12959CE72A7A786700EF0DD5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				12959CE62A7A786700EF0DD5 /* coni-on-air-ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		12959CE82A7A786700EF0DD5 /* coni-on-air-ios */ = {
+			isa = PBXGroup;
+			children = (
+				127043B22A7A8946006A9112 /* Helpers */,
+				127043A22A7A8767006A9112 /* Models */,
+				124F9FB72A7A824000AB2A0D /* Languages */,
+				12959CFA2A7A7E4300EF0DD5 /* Views */,
+				12959CF92A7A7DE500EF0DD5 /* Info.plist */,
+				124F9FB52A7A81D400AB2A0D /* LaunchScreen.storyboard */,
+				12959CE92A7A786700EF0DD5 /* coni_on_air_iosApp.swift */,
+				12959CED2A7A786800EF0DD5 /* Assets.xcassets */,
+				12959CEF2A7A786800EF0DD5 /* Preview Content */,
+			);
+			path = "coni-on-air-ios";
+			sourceTree = "<group>";
+		};
+		12959CEF2A7A786800EF0DD5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				12959CF02A7A786800EF0DD5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		12959CFA2A7A7E4300EF0DD5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				786FE61A2AD6EBC1003B5A9D /* Live */,
+				127043B52A7A8B6F006A9112 /* Chat */,
+				127043A72A7A88BE006A9112 /* Producers */,
+				1270439B2A7A86F4006A9112 /* Radio */,
+				1283071F2A7A7E7200054335 /* TabBarButton.swift */,
+				125AD49C2A826702007A43D2 /* CacheAsyncImage.swift */,
+				12959CEB2A7A786700EF0DD5 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		786FE61A2AD6EBC1003B5A9D /* Live */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		12959CE52A7A786700EF0DD5 /* coni-on-air-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12959CF42A7A786800EF0DD5 /* Build configuration list for PBXNativeTarget "coni-on-air-ios" */;
+			buildPhases = (
+				12959CE22A7A786700EF0DD5 /* Sources */,
+				12959CE32A7A786700EF0DD5 /* Frameworks */,
+				12959CE42A7A786700EF0DD5 /* Resources */,
+				127043972A7A8579006A9112 /* Crashlytics */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "coni-on-air-ios";
+			packageProductDependencies = (
+				1270438F2A7A8448006A9112 /* FirebaseCrashlytics */,
+				127043912A7A8448006A9112 /* FirebaseDatabase */,
+				127043932A7A8448006A9112 /* FirebaseDatabaseSwift */,
+				127043992A7A86D3006A9112 /* FRadioPlayer */,
+			);
+			productName = "coni-on-air-ios";
+			productReference = 12959CE62A7A786700EF0DD5 /* coni-on-air-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		12959CDE2A7A786700EF0DD5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					12959CE52A7A786700EF0DD5 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 12959CE12A7A786700EF0DD5 /* Build configuration list for PBXProject "coni-on-air-ios" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 12959CDD2A7A786700EF0DD5;
+			packageReferences = (
+				1270438E2A7A8448006A9112 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				127043982A7A86D3006A9112 /* XCRemoteSwiftPackageReference "FRadioPlayer" */,
+			);
+			productRefGroup = 12959CE72A7A786700EF0DD5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				12959CE52A7A786700EF0DD5 /* coni-on-air-ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		12959CE42A7A786700EF0DD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				124F9FB92A7A825D00AB2A0D /* Localizable.strings in Resources */,
+				12959CF82A7A78CA00EF0DD5 /* Environment.xcconfig in Resources */,
+				124F9FB62A7A81D400AB2A0D /* LaunchScreen.storyboard in Resources */,
+				12959CF12A7A786800EF0DD5 /* Preview Assets.xcassets in Resources */,
+				12959CEE2A7A786800EF0DD5 /* Assets.xcassets in Resources */,
+				127043962A7A8485006A9112 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		127043972A7A8579006A9112 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(BUILT_PRODUCTS_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(BUILT_PRODUCTS_DIR)/$(EXECUTABLE_PATH)",
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		12959CE22A7A786700EF0DD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				127043A12A7A872D006A9112 /* PlayIndicatorView.swift in Sources */,
+				12959CEC2A7A786700EF0DD5 /* ContentView.swift in Sources */,
+				127043A42A7A8767006A9112 /* NowPlayingData.swift in Sources */,
+				786FE6192AD6EB82003B5A9D /* RadioView.swift in Sources */,
+				127043BD2A7A8B6F006A9112 /* ChatView.swift in Sources */,
+				127043B12A7A88BE006A9112 /* ProducerRow.swift in Sources */,
+				127043B02A7A88BE006A9112 /* ProducersView.swift in Sources */,
+				127043BF2A7A8B76006A9112 /* Message.swift in Sources */,
+				127043BB2A7A8B6F006A9112 /* ChatView-ViewModel.swift in Sources */,
+				120071452A82783100670B7F /* ProducerView.swift in Sources */,
+				12959CEA2A7A786700EF0DD5 /* coni_on_air_iosApp.swift in Sources */,
+				127043AD2A7A88BE006A9112 /* ProducerView-ViewModel.swift in Sources */,
+				127043C12A7A8BD4006A9112 /* Ext_DateFormatter.swift in Sources */,
+				127043A62A7A88B3006A9112 /* Producer.swift in Sources */,
+				128307202A7A7E7200054335 /* TabBarButton.swift in Sources */,
+				1270439E2A7A86F4006A9112 /* RadioView-ViewModel.swift in Sources */,
+				12A74A1F2A813C8300298F50 /* View+ConditionalModifier.swift in Sources */,
+				125AD49D2A826702007A43D2 /* CacheAsyncImage.swift in Sources */,
+				127043B42A7A8959006A9112 /* AttributedText.swift in Sources */,
+				127043AF2A7A88BE006A9112 /* ProducersView-ViewModel.swift in Sources */,
+				127043BC2A7A8B6F006A9112 /* SendMessageView.swift in Sources */,
+				127043BA2A7A8B6F006A9112 /* MessageRow.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		12959CF22A7A786800EF0DD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12959CF72A7A78CA00EF0DD5 /* Environment.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		12959CF32A7A786800EF0DD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12959CF72A7A78CA00EF0DD5 /* Environment.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		12959CF52A7A786800EF0DD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12959CF72A7A78CA00EF0DD5 /* Environment.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 4;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_ASSET_PATHS = "\"coni-on-air-ios/Preview Content\"";
+				DEVELOPMENT_TEAM = Q3ZGYVX52S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "coni-on-air-ios/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Coni on Air";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.programize.coni-on-air";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		12959CF62A7A786800EF0DD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12959CF72A7A78CA00EF0DD5 /* Environment.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_ASSET_PATHS = "\"coni-on-air-ios/Preview Content\"";
+				DEVELOPMENT_TEAM = Q3ZGYVX52S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "coni-on-air-ios/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Coni on Air";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.programize.coni-on-air";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		12959CE12A7A786700EF0DD5 /* Build configuration list for PBXProject "coni-on-air-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12959CF22A7A786800EF0DD5 /* Debug */,
+				12959CF32A7A786800EF0DD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12959CF42A7A786800EF0DD5 /* Build configuration list for PBXNativeTarget "coni-on-air-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12959CF52A7A786800EF0DD5 /* Debug */,
+				12959CF62A7A786800EF0DD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1270438E2A7A8448006A9112 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.13.0;
+			};
+		};
+		127043982A7A86D3006A9112 /* XCRemoteSwiftPackageReference "FRadioPlayer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fethica/FRadioPlayer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.22;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1270438F2A7A8448006A9112 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1270438E2A7A8448006A9112 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		127043912A7A8448006A9112 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1270438E2A7A8448006A9112 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		127043932A7A8448006A9112 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1270438E2A7A8448006A9112 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		127043992A7A86D3006A9112 /* FRadioPlayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 127043982A7A86D3006A9112 /* XCRemoteSwiftPackageReference "FRadioPlayer" */;
+			productName = FRadioPlayer;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 12959CDE2A7A786700EF0DD5 /* Project object */;
+}

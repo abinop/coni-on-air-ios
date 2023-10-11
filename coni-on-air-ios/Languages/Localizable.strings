@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  coni-on-air
+*/
+"LIVE" = "Live";
+"PRODUCERS" = "Producers";
+"RADIO" = "Radio";
+"LIVE" = "Live";
+"NOW_PLAYING" = "Now Playing";
+"CHAT" = "Chat";
+"NEW_MESSAGE" = "New message";
+"CHAT_NAME_PLACEHOLDER" = "Your name";
+"CHAT_MESSAGE_PLACEHOLDER" = "Your message";
+"SEND_BUTTON" = "Send";
+"CANCEL_BUTTON" = "Cancel";
+"SEND_MESSAGE_ERROR" = "An error occurred sending your message";
+"TRY_AGAIN" = "Try again";
+"PLAYER_ERROR" = "An error occured while trying to play the live stream";
