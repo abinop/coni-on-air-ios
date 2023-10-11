@@ -6,7 +6,7 @@
 import SwiftUI
 
 class TabViewModel: ObservableObject {
-    @Published var currentTab = "Live"
+    @Published var currentTab = "Radio"
     @Published var isVisible: Bool = true
 }
 

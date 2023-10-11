@@ -38,6 +38,7 @@
 		12959CF12A7A786800EF0DD5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12959CF02A7A786800EF0DD5 /* Preview Assets.xcassets */; };
 		12959CF82A7A78CA00EF0DD5 /* Environment.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 12959CF72A7A78CA00EF0DD5 /* Environment.xcconfig */; };
 		12A74A1F2A813C8300298F50 /* View+ConditionalModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A74A1E2A813C8300298F50 /* View+ConditionalModifier.swift */; };
+		78267DB42AD6EC94005E28A4 /* LiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78267DB32AD6EC94005E28A4 /* LiveView.swift */; };
 		786FE6192AD6EB82003B5A9D /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786FE6182AD6EB82003B5A9D /* RadioView.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		12959CF72A7A78CA00EF0DD5 /* Environment.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Environment.xcconfig; sourceTree = "<group>"; };
 		12959CF92A7A7DE500EF0DD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		12A74A1E2A813C8300298F50 /* View+ConditionalModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+ConditionalModifier.swift"; sourceTree = "<group>"; };
+		78267DB32AD6EC94005E28A4 /* LiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveView.swift; sourceTree = "<group>"; };
 		786FE6182AD6EB82003B5A9D /* RadioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,6 +211,7 @@
 		786FE61A2AD6EBC1003B5A9D /* Live */ = {
 			isa = PBXGroup;
 			children = (
+				78267DB32AD6EC94005E28A4 /* LiveView.swift */,
 			);
 			path = Live;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				786FE6192AD6EB82003B5A9D /* RadioView.swift in Sources */,
 				127043BD2A7A8B6F006A9112 /* ChatView.swift in Sources */,
 				127043B12A7A88BE006A9112 /* ProducerRow.swift in Sources */,
+				78267DB42AD6EC94005E28A4 /* LiveView.swift in Sources */,
 				127043B02A7A88BE006A9112 /* ProducersView.swift in Sources */,
 				127043BF2A7A8B76006A9112 /* Message.swift in Sources */,
 				127043BB2A7A8B6F006A9112 /* ChatView-ViewModel.swift in Sources */,
@@ -487,8 +491,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -527,8 +531,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (

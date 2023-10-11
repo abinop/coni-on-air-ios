@@ -1,5 +1,5 @@
 //
-//  LiveView-ViewModel.swift
+//  RadioView-ViewModel.swift
 //  coni-on-air
 //
 

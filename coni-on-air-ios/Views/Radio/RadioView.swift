@@ -1,5 +1,5 @@
 //
-//  LiveView.swift
+//  RadioView.swift
 //  coni-on-air
 //
 
@@ -88,7 +88,7 @@ struct RadioView: View {
     }
 }
 
-struct LiveView_Previews: PreviewProvider {
+struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
         RadioView()
     }
