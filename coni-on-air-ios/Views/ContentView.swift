@@ -5,37 +5,6 @@
 
 import SwiftUI
 
-struct OrientationLockedView<Content: View>: UIViewControllerRepresentable {
-    var orientation: UIInterfaceOrientationMask
-    var content: () -> Content
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<OrientationLockedView<Content>>) -> UIHostingController<Content> {
-        return OrientationLockedHostingController(rootView: content(), orientation: orientation)
-    }
-    
-    func updateUIViewController(_ uiViewController: UIHostingController<Content>, context: UIViewControllerRepresentableContext<OrientationLockedView<Content>>) {
-        // Nothing
-    }
-}
-
-class OrientationLockedHostingController<Content: View>: UIHostingController<Content> {
-    var orientation: UIInterfaceOrientationMask
-    
-    init(rootView: Content, orientation: UIInterfaceOrientationMask) {
-        self.orientation = orientation
-        super.init(rootView: rootView)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return orientation
-    }
-}
-
-
 struct ContentView: View {
     @StateObject var tabData = TabViewModel()
     @Namespace var animation
@@ -46,24 +15,16 @@ struct ContentView: View {
 
     var body: some View {
         TabView(selection: $tabData.currentTab) {
-            OrientationLockedView(orientation: .portrait) {
                 RadioView()
-            }
             .tag("Radio")
 
-            OrientationLockedView(orientation: .portrait) {
                 ProducersView().environmentObject(tabData)
-            }
             .tag("Producers")
 
-            OrientationLockedView(orientation: .portrait) {
                 ChatView()
-            }
             .tag("Chat")
 
-            OrientationLockedView(orientation: .landscape) {
                 LiveView()
-            }
             .tag("Live")
         }
         .overlay(alignment: .bottom) {

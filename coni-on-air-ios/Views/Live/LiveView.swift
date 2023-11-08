@@ -8,13 +8,18 @@
 import SwiftUI
 import WebKit
 
-// WebView wrapped in a UIViewRepresentable
 struct WebView: UIViewRepresentable {
     let urlString: String
     
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
         webView.navigationDelegate = context.coordinator
+        
+        // Ensure the background color is transparent or set to your desired color
+        webView.isOpaque = false
+        webView.backgroundColor = UIColor.clear
+        webView.scrollView.backgroundColor = UIColor.clear
+        
         return webView
     }
     
@@ -40,13 +45,15 @@ struct WebView: UIViewRepresentable {
     }
 }
 
-// LiveView containing the full-screen WebView
 struct LiveView: View {
     var body: some View {
-        NavigationView {
-            WebView(urlString: "https://coni-onair.com/live.php")
-                .edgesIgnoringSafeArea(.all)
-        }
+        WebView(urlString: "https://coni-onair.com/live.php")
+            .edgesIgnoringSafeArea(.all) // This should allow WebView to fill the entire screen
+            .background(
+                Color("color-black")
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            )
     }
 }
 
