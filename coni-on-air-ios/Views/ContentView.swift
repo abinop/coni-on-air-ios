@@ -29,6 +29,23 @@ struct ContentView: View {
         }
         .overlay(alignment: .bottom) {
             if tabData.isVisible {
+                
+//                ScrollView(.horizontal, showsIndicators: false) {
+//                    HStack(spacing: 50) {  // Adjust spacing as needed
+//                        TabBarButton(id: "Radio", title: "RADIO", image: "radio", animation: animation)
+//                        TabBarButton(id: "Producers", title: "PRODUCERS", image: "person.3.fill", animation: animation)
+//                        TabBarButton(id: "Chat", title: "CHAT", image: "text.bubble.fill", animation: animation)
+//                        TabBarButton(id: "Live", title: "LIVE", image: "video.fill", animation: animation)
+//                        // Add your new TabBarButton here
+//                    }
+//                    .padding(.vertical, 14)
+//                    .padding(.horizontal)
+//                }
+//                .background(Color(uiColor: .darkGray), in: Capsule())
+//                .padding(.horizontal, 20)
+//                .padding(.bottom, 8)
+//                .environmentObject(tabData)
+                
                 HStack {
                     TabBarButton(id: "Radio", title: "RADIO", image: "radio", animation: animation)
                     TabBarButton(id: "Producers", title: "PRODUCERS", image: "person.3.fill", animation: animation)

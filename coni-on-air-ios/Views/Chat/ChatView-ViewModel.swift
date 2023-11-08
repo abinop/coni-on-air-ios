@@ -42,7 +42,8 @@ extension ChatView {
                     let messageData = try JSONSerialization.data(withJSONObject: json)
                     let message = try self.decoder.decode(Message.self, from: messageData)
                     // Insert the message at the beginning of the array
-                    self.messages.insert(message, at: 0)
+//                    self.messages.insert(message, at: 0)
+                    self.messages.append(message)
                 } catch {
                     print("an error occurred", error)
                 }
