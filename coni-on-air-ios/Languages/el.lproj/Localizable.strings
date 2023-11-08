@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  coni-on-air
+*/
+"LIVE" = "Ζωντανά";
+"PRODUCERS" = "Παραγωγοί";
+"RADIO" = "Ραδιόφωνο";
+"LIVE" = "Ζωντανά";
+"NOW_PLAYING" = "Τώρα παίζει";
+"CHAT" = "Συνομιλία";
+"NEW_MESSAGE" = "Νέο μήνυμα";
+"CHAT_NAME_PLACEHOLDER" = "Το όνομά σας";
+"CHAT_MESSAGE_PLACEHOLDER" = "Το μήνυμά σας";
+"SEND_BUTTON" = "Αποστολή";
+"CANCEL_BUTTON" = "Ακύρωση";
+"SEND_MESSAGE_ERROR" = "Προέκυψε σφάλμα κατά την αποστολή του μηνύματός σας";
+"TRY_AGAIN" = "Δοκιμάστε ξανά";
+"PLAYER_ERROR" = "Προέκυψε σφάλμα κατά την αναπαραγωγή της ζωντανής μετάδοσης";

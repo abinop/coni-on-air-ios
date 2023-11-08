@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		120071452A82783100670B7F /* ProducerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120071442A82783100670B7F /* ProducerView.swift */; };
 		124F9FB62A7A81D400AB2A0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 124F9FB52A7A81D400AB2A0D /* LaunchScreen.storyboard */; };
-		124F9FB92A7A825D00AB2A0D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 124F9FB82A7A825D00AB2A0D /* Localizable.strings */; };
 		125AD49D2A826702007A43D2 /* CacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125AD49C2A826702007A43D2 /* CacheAsyncImage.swift */; };
 		127043902A7A8448006A9112 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1270438F2A7A8448006A9112 /* FirebaseCrashlytics */; };
 		127043922A7A8448006A9112 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 127043912A7A8448006A9112 /* FirebaseDatabase */; };
@@ -40,12 +39,12 @@
 		12A74A1F2A813C8300298F50 /* View+ConditionalModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A74A1E2A813C8300298F50 /* View+ConditionalModifier.swift */; };
 		78267DB42AD6EC94005E28A4 /* LiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78267DB32AD6EC94005E28A4 /* LiveView.swift */; };
 		786FE6192AD6EB82003B5A9D /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786FE6182AD6EB82003B5A9D /* RadioView.swift */; };
+		78A8991F2AFB50C100F5A45B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78A899212AFB50C100F5A45B /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		120071442A82783100670B7F /* ProducerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProducerView.swift; sourceTree = "<group>"; };
 		124F9FB52A7A81D400AB2A0D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		124F9FB82A7A825D00AB2A0D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		125AD49C2A826702007A43D2 /* CacheAsyncImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheAsyncImage.swift; sourceTree = "<group>"; };
 		127043952A7A8485006A9112 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1270439C2A7A86F4006A9112 /* RadioView-ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RadioView-ViewModel.swift"; sourceTree = "<group>"; };
@@ -74,6 +73,8 @@
 		12A74A1E2A813C8300298F50 /* View+ConditionalModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+ConditionalModifier.swift"; sourceTree = "<group>"; };
 		78267DB32AD6EC94005E28A4 /* LiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveView.swift; sourceTree = "<group>"; };
 		786FE6182AD6EB82003B5A9D /* RadioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
+		78A899202AFB50C100F5A45B /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Localizable.strings; sourceTree = "<group>"; };
+		78A899222AFB511600F5A45B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +95,7 @@
 		124F9FB72A7A824000AB2A0D /* Languages */ = {
 			isa = PBXGroup;
 			children = (
-				124F9FB82A7A825D00AB2A0D /* Localizable.strings */,
+				78A899212AFB50C100F5A45B /* Localizable.strings */,
 			);
 			path = Languages;
 			sourceTree = "<group>";
@@ -265,6 +266,7 @@
 			knownRegions = (
 				en,
 				Base,
+				el,
 			);
 			mainGroup = 12959CDD2A7A786700EF0DD5;
 			packageReferences = (
@@ -285,7 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				124F9FB92A7A825D00AB2A0D /* Localizable.strings in Resources */,
+				78A8991F2AFB50C100F5A45B /* Localizable.strings in Resources */,
 				12959CF82A7A78CA00EF0DD5 /* Environment.xcconfig in Resources */,
 				124F9FB62A7A81D400AB2A0D /* LaunchScreen.storyboard in Resources */,
 				12959CF12A7A786800EF0DD5 /* Preview Assets.xcassets in Resources */,
@@ -354,6 +356,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		78A899212AFB50C100F5A45B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78A899202AFB50C100F5A45B /* el */,
+				78A899222AFB511600F5A45B /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		12959CF22A7A786800EF0DD5 /* Debug */ = {
@@ -498,7 +512,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.programize.coni-on-air";
@@ -537,7 +551,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.programize.coni-on-air";
