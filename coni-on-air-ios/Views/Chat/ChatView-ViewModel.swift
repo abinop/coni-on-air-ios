@@ -4,7 +4,7 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseDatabase
 
 extension ChatView {
     @MainActor class ViewModel: ObservableObject {
