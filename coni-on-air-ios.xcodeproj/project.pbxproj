@@ -31,7 +31,7 @@
 		127043BF2A7A8B76006A9112 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127043BE2A7A8B76006A9112 /* Message.swift */; };
 		127043C12A7A8BD4006A9112 /* Ext_DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127043C02A7A8BD4006A9112 /* Ext_DateFormatter.swift */; };
 		128307202A7A7E7200054335 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283071F2A7A7E7200054335 /* TabBarButton.swift */; };
-		12959CEA2A7A786700EF0DD5 /* coni_on_air_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12959CE92A7A786700EF0DD5 /* coni_on_air_iosApp.swift */; };
+		12959CEA2A7A786700EF0DD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12959CE92A7A786700EF0DD5 /* AppDelegate.swift */; };
 		12959CEC2A7A786700EF0DD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12959CEB2A7A786700EF0DD5 /* ContentView.swift */; };
 		12959CEE2A7A786800EF0DD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12959CED2A7A786800EF0DD5 /* Assets.xcassets */; };
 		12959CF12A7A786800EF0DD5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12959CF02A7A786800EF0DD5 /* Preview Assets.xcassets */; };
@@ -65,7 +65,7 @@
 		127043C02A7A8BD4006A9112 /* Ext_DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ext_DateFormatter.swift; sourceTree = "<group>"; };
 		1283071F2A7A7E7200054335 /* TabBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		12959CE62A7A786700EF0DD5 /* coni-on-air-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "coni-on-air-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		12959CE92A7A786700EF0DD5 /* coni_on_air_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coni_on_air_iosApp.swift; sourceTree = "<group>"; };
+		12959CE92A7A786700EF0DD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12959CEB2A7A786700EF0DD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		12959CED2A7A786800EF0DD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12959CF02A7A786800EF0DD5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 				12959CFA2A7A7E4300EF0DD5 /* Views */,
 				12959CF92A7A7DE500EF0DD5 /* Info.plist */,
 				124F9FB52A7A81D400AB2A0D /* LaunchScreen.storyboard */,
-				12959CE92A7A786700EF0DD5 /* coni_on_air_iosApp.swift */,
+				12959CE92A7A786700EF0DD5 /* AppDelegate.swift */,
 				12959CED2A7A786800EF0DD5 /* Assets.xcassets */,
 				12959CEF2A7A786800EF0DD5 /* Preview Content */,
 			);
@@ -345,7 +345,7 @@
 				127043BF2A7A8B76006A9112 /* Message.swift in Sources */,
 				127043BB2A7A8B6F006A9112 /* ChatView-ViewModel.swift in Sources */,
 				120071452A82783100670B7F /* ProducerView.swift in Sources */,
-				12959CEA2A7A786700EF0DD5 /* coni_on_air_iosApp.swift in Sources */,
+				12959CEA2A7A786700EF0DD5 /* AppDelegate.swift in Sources */,
 				127043AD2A7A88BE006A9112 /* ProducerView-ViewModel.swift in Sources */,
 				127043C12A7A8BD4006A9112 /* Ext_DateFormatter.swift in Sources */,
 				78D533FB2D67840A006C299E /* CarPlaySceneDelegate.swift in Sources */,
