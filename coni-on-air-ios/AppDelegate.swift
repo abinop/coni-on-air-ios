@@ -5,9 +5,21 @@ import SwiftUI
 
 @main
 class AppDelegate: NSObject, UIApplicationDelegate {
+    var window: UIWindow?
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print("✅ [AppDelegate] Application launched")
         FirebaseApp.configure()
+        
+        // Force window setup for iOS
+        print("📱 [AppDelegate] Setting up iOS window")
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let hostingController = UIHostingController(rootView: ContentView())
+        window.rootViewController = hostingController
+        window.makeKeyAndVisible()
+        self.window = window
+        print("📱 [AppDelegate] iOS window configured with root: \(String(describing: window.rootViewController))")
+        
         return true
     }
 
