@@ -77,6 +77,7 @@
 		78A899202AFB50C100F5A45B /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78A899222AFB511600F5A45B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78D533FA2D67840A006C299E /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
+		78D534062D6A53A8006C299E /* coni-on-air-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "coni-on-air-ios.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +177,7 @@
 		12959CE82A7A786700EF0DD5 /* coni-on-air-ios */ = {
 			isa = PBXGroup;
 			children = (
+				78D534062D6A53A8006C299E /* coni-on-air-ios.entitlements */,
 				78D533FA2D67840A006C299E /* CarPlaySceneDelegate.swift */,
 				127043B22A7A8946006A9112 /* Helpers */,
 				127043A22A7A8767006A9112 /* Models */,
