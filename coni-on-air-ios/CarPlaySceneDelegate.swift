@@ -17,22 +17,22 @@ public class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelega
     private var databaseRef: DatabaseReference?
     private var nowPlayingData: NowPlayingData?
     private var playButton: CPNowPlayingButton?
+    private var isInitialSetup = true
 
     public func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene,
                                 didConnect interfaceController: CPInterfaceController) {
         print("🚗 [CarPlay] Connected to CarPlay interface")
+        print("🎵 [CarPlay] Initial player state - isPlaying: \(radioPlayer.isPlaying), state: \(radioPlayer.state.rawValue), URL: \(radioPlayer.radioURL?.absoluteString ?? "nil")")
+        
         self.interfaceController = interfaceController
         setupAudioSession()
         setupNowPlayingTemplate()
         setupDatabaseListener()
-        radioPlayer.delegate = self
         
-        // Initialize player if we already have URL
-        if let url = nowPlayingData?.url {
-            print("🎵 [CarPlay] Initializing player with URL: \(url)")
-            radioPlayer.radioURL = url
-            radioPlayer.enableArtwork = true
-        }
+        // Stop any existing playback
+        print("🎵 [CarPlay] Stopping any existing playback")
+        radioPlayer.stop()
+        radioPlayer.delegate = self
     }
     
     public func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene,
@@ -58,14 +58,16 @@ public class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelega
         nowPlayingTemplate?.isUpNextButtonEnabled = false
         nowPlayingTemplate?.isAlbumArtistButtonEnabled = false
         
-        playButton = CPNowPlayingButton(handler: { [weak self] _ in
-            print("🎵 [CarPlay] Play button tapped")
+        // Create a play/pause toggle button
+        let playPauseButton = CPNowPlayingButton { [weak self] _ in
+            print("🎵 [CarPlay] Play/Pause button tapped via handler")
             self?.handlePlayPause()
-        })
+        }
         
-        nowPlayingTemplate?.updateNowPlayingButtons([playButton!])
+        nowPlayingTemplate?.updateNowPlayingButtons([playPauseButton])
+        self.playButton = playPauseButton
         interfaceController?.setRootTemplate(nowPlayingTemplate!, animated: true)
-        updatePlayButtonState()
+        print("🎵 [CarPlay] Template setup complete - Current state - isPlaying: \(radioPlayer.isPlaying), state: \(radioPlayer.state.rawValue)")
     }
     
     private func setupDatabaseListener() {
@@ -73,7 +75,7 @@ public class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelega
         databaseRef = Database.database().reference()
         
         // Listen for now playing data
-        databaseRef?.child("data").observe(.value) { [weak self] snapshot in
+        databaseRef?.child("data").observe(.value) { [weak self] snapshot, _ in
             guard let self,
                   let json = snapshot.value as? [String: Any] else { return }
             do {
@@ -81,12 +83,26 @@ public class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelega
                 let decoder = JSONDecoder()
                 self.nowPlayingData = try decoder.decode(NowPlayingData.self, from: data)
                 print("📡 [CarPlay] Received now playing data with URL: \(self.nowPlayingData?.url.absoluteString ?? "nil")")
+                print("🎵 [CarPlay] Current player state - isPlaying: \(self.radioPlayer.isPlaying), state: \(self.radioPlayer.state.rawValue), URL: \(self.radioPlayer.radioURL?.absoluteString ?? "nil")")
                 
-                // Initialize player URL if not set
-                if radioPlayer.radioURL == nil, let url = self.nowPlayingData?.url {
-                    print("🎵 [CarPlay] Setting initial radio URL: \(url)")
-                    radioPlayer.radioURL = url
-                    radioPlayer.enableArtwork = true
+                // Only set the URL during initial setup, don't start playing
+                if self.isInitialSetup, let url = self.nowPlayingData?.url {
+                    print("🎵 [CarPlay] Initial setup - Setting radio URL")
+                    self.radioPlayer.stop()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        print("🎵 [CarPlay] Setting URL after stop")
+                        self.radioPlayer.enableArtwork = true
+                        self.radioPlayer.radioURL = url
+                        print("🎵 [CarPlay] URL set - Current state - isPlaying: \(self.radioPlayer.isPlaying), state: \(self.radioPlayer.state.rawValue)")
+                        self.isInitialSetup = false
+                        
+                        // Force stop again after URL is set
+                        self.radioPlayer.stop()
+                        print("🎵 [CarPlay] Forced stop after URL set - isPlaying: \(self.radioPlayer.isPlaying), state: \(self.radioPlayer.state.rawValue)")
+                        
+                        // Update button state after setup
+                        self.updatePlayButtonState()
+                    }
                 }
             } catch {
                 print("❌ [CarPlay] Error decoding now playing data:", error)
@@ -95,9 +111,14 @@ public class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelega
         
         // Listen for track info
         databaseRef?.child("nowPlaying").observe(.value) { [weak self] snapshot in
-            guard let data = snapshot.value as? [String: Any],
+            guard let self = self,
+                  let data = snapshot.value as? [String: Any],
                   let title = data["title"] as? String,
                   let artist = data["artist"] as? String else { return }
+            
+            print("📡 [CarPlay] Updating now playing info - Title: \(title), Artist: \(artist)")
+            
+            // Update both MPNowPlayingInfoCenter and CarPlay template
             let nowPlaying = MPNowPlayingInfoCenter.default()
             var nowPlayingInfo = [String: Any]()
             nowPlayingInfo[MPMediaItemPropertyTitle] = title
@@ -112,18 +133,19 @@ public class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelega
     }
     
     private func handlePlayPause() {
-        print("🎵 [CarPlay] Handle play/pause - Current state: isPlaying=\(radioPlayer.isPlaying)")
+        print("🎵 [CarPlay] Play button tapped")
+        print("🎵 [CarPlay] Current state - isPlaying: \(radioPlayer.isPlaying), state: \(radioPlayer.state.rawValue), URL: \(radioPlayer.radioURL?.absoluteString ?? "nil")")
         
         if radioPlayer.isPlaying {
-            print("🎵 [CarPlay] Stopping playback")
+            print("🎵 [CarPlay] Attempting to stop playback")
             radioPlayer.stop()
         } else {
-            print("🎵 [CarPlay] Starting playback")
+            print("🎵 [CarPlay] Attempting to start playback")
             if radioPlayer.radioURL == nil {
                 if let url = nowPlayingData?.url {
-                    print("🎵 [CarPlay] Setting radio URL: \(url)")
-                    radioPlayer.radioURL = url
+                    print("🎵 [CarPlay] No URL set, setting now: \(url)")
                     radioPlayer.enableArtwork = true
+                    radioPlayer.radioURL = url
                 } else {
                     print("❌ [CarPlay] No URL available for playback")
                     return
@@ -131,42 +153,52 @@ public class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelega
             }
             
             do {
+                print("🎵 [CarPlay] Setting up audio session")
                 try AVAudioSession.sharedInstance().setCategory(.playback)
                 try AVAudioSession.sharedInstance().setActive(true)
-                print("🎵 [CarPlay] Audio session activated")
+                print("✅ [CarPlay] Audio session activated")
             } catch {
                 print("❌ [CarPlay] Failed to set up audio session:", error)
             }
             
+            print("🎵 [CarPlay] Calling play()")
             radioPlayer.play()
         }
         
-        updatePlayButtonState()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            print("🎵 [CarPlay] State after play/pause action - isPlaying: \(self.radioPlayer.isPlaying), state: \(self.radioPlayer.state.rawValue)")
+            self.updatePlayButtonState()
+        }
     }
     
     private func updatePlayButtonState() {
-        guard let playButton = playButton else { return }
         let isPlaying = radioPlayer.isPlaying
-        print("🎵 [CarPlay] Updating play button state - isPlaying=\(isPlaying)")
+        print("🎵 [CarPlay] Updating button - isPlaying: \(isPlaying), state: \(radioPlayer.state.rawValue)")
         
-        let newButtons = [
-            CPNowPlayingButton(handler: { [weak self] _ in
-                print("🎵 [CarPlay] Play button tapped")
-                self?.handlePlayPause()
-            })
-        ]
-        nowPlayingTemplate?.updateNowPlayingButtons(newButtons)
+        // Create a new play/pause toggle button
+        let playPauseButton = CPNowPlayingButton { [weak self] _ in
+            print("🎵 [CarPlay] Play/Pause button tapped via handler")
+            self?.handlePlayPause()
+        }
+        
+        nowPlayingTemplate?.updateNowPlayingButtons([playPauseButton])
+        self.playButton = playPauseButton
+        print("🎵 [CarPlay] Button updated - isPlaying: \(radioPlayer.isPlaying), state: \(radioPlayer.state.rawValue)")
     }
 }
 
 extension CarPlaySceneDelegate: FRadioPlayerDelegate {
     public func radioPlayer(_ player: FRadioPlayer, playerStateDidChange state: FRadioPlayerState) {
-        print("🎵 [CarPlay] Player state changed to: \(state)")
-        updatePlayButtonState()
+        print("🎵 [CarPlay] Player state changed - New state: \(state.rawValue), isPlaying: \(player.isPlaying)")
+        DispatchQueue.main.async {
+            self.updatePlayButtonState()
+        }
     }
     
     public func radioPlayer(_ player: FRadioPlayer, playbackStateDidChange state: FRadioPlaybackState) {
-        print("🎵 [CarPlay] Playback state changed to: \(state)")
-        updatePlayButtonState()
+        print("🎵 [CarPlay] Playback state changed - New state: \(state.rawValue), isPlaying: \(player.isPlaying)")
+        DispatchQueue.main.async {
+            self.updatePlayButtonState()
+        }
     }
 }
