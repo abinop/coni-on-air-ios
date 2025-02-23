@@ -40,7 +40,7 @@ struct ContentView: View {
                 .background(Color(uiColor: .darkGray), in: Capsule())
                 .padding(.horizontal, 20)
                 .padding(.bottom, 8)
-                .onAppear { print("📱 [ContentView] Tab bar overlay appeared") }
+//                .onAppear { print("📱 [ContentView] Tab bar overlay appeared") }
             }
         }
         .ignoresSafeArea(.keyboard)
