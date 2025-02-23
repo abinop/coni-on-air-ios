@@ -98,6 +98,14 @@ public class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelega
         nowPlayingTemplate?.isUpNextButtonEnabled = false
         nowPlayingTemplate?.isAlbumArtistButtonEnabled = false
         
+        // Set initial title via MPNowPlayingInfoCenter
+        let nowPlayingInfoCenter = MPNowPlayingInfoCenter.default()
+        var nowPlayingInfo: [String: Any] = nowPlayingInfoCenter.nowPlayingInfo ?? [:]
+        nowPlayingInfo[MPMediaItemPropertyTitle] = "CONI ON AIR"
+        nowPlayingInfo[MPNowPlayingInfoPropertyIsLiveStream] = true
+        nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = 0.0 // Initially stopped
+        nowPlayingInfoCenter.nowPlayingInfo = nowPlayingInfo
+        
         updatePlayButtonState()
         interfaceController?.setRootTemplate(nowPlayingTemplate!, animated: true)
         print("🎵 [CarPlay] Template setup complete - Current state - isPlaying: \(radioPlayer.isPlaying), state: \(radioPlayer.state.rawValue)")
@@ -124,12 +132,40 @@ public class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelega
                         self.updatePlayButtonState() // Update UI to show play button
                     }
                 }
+                
+                // Update now playing info
+                if let songTitle = self.nowPlayingData?.songTitle {
+                    print("📡 [CarPlay] Updating now playing info - Title: \(songTitle)")
+                    
+                    // Update both MPNowPlayingInfoCenter and CarPlay template
+                    let nowPlaying = MPNowPlayingInfoCenter.default()
+                    var nowPlayingInfo = nowPlaying.nowPlayingInfo ?? [:]
+                    
+                    // Update track info
+                    nowPlayingInfo[MPMediaItemPropertyTitle] = songTitle.uppercased()
+                    nowPlayingInfo[MPMediaItemPropertyArtist] = "CONI ON AIR"
+                    nowPlayingInfo[MPNowPlayingInfoPropertyIsLiveStream] = true
+                    nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = self.radioPlayer.isPlaying ? 1.0 : 0.0
+                    
+                    // Add artwork if available
+                    if let image = UIImage(named: "image") {
+                        let artwork = MPMediaItemArtwork(boundsSize: image.size) { _ in image }
+                        nowPlayingInfo[MPMediaItemPropertyArtwork] = artwork
+                    }
+                    
+                    // Update the info center
+                    nowPlaying.nowPlayingInfo = nowPlayingInfo
+                    
+                    // Update CarPlay display
+                    DispatchQueue.main.async {
+                        // Update title
+                        self.updatePlayButtonState() // Refresh button state
+                    }
+                }
             } catch {
                 print("❌ [CarPlay] Error decoding now playing data:", error)
             }
         }
-        
-        // ... existing track info listener ...
     }
 
     private func handlePlayPause() {
