@@ -28,12 +28,12 @@ public class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelega
         setupNowPlayingTemplate()
         setupDatabaseListener()
         
-        // Stop any existing playback
+        // Ensure player is stopped and reset
         print("🎵 [CarPlay] Stopping any existing playback")
         radioPlayer.stop()
+        radioPlayer.radioURL = nil // Clear URL to prevent auto-play
         radioPlayer.delegate = self
         
-        // Setup remote command center
         setupRemoteCommandCenter()
     }
     
@@ -116,21 +116,20 @@ public class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelega
                 self.nowPlayingData = try decoder.decode(NowPlayingData.self, from: data)
                 print("📡 [CarPlay] Received now playing data with URL: \(self.nowPlayingData?.url.absoluteString ?? "nil")")
                 
-                if self.isInitialSetup, let url = self.nowPlayingData?.url {
-                    print("🎵 [CarPlay] Initial setup - Setting radio URL")
-                    self.radioPlayer.stop()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        self.radioPlayer.enableArtwork = true
-                        self.radioPlayer.radioURL = url
-                        self.isInitialSetup = false
-                        self.updatePlayButtonState() // Update UI but don't play
+                if self.isInitialSetup {
+                    print("🎵 [CarPlay] Initial setup - URL received but not setting on player")
+                    self.isInitialSetup = false
+                    DispatchQueue.main.async {
+                        self.radioPlayer.stop() // Ensure stopped
+                        self.updatePlayButtonState() // Update UI to show play button
                     }
                 }
             } catch {
                 print("❌ [CarPlay] Error decoding now playing data:", error)
             }
         }
-        // Rest of the method remains the same...
+        
+        // ... existing track info listener ...
     }
 
     private func handlePlayPause() {
@@ -142,6 +141,8 @@ public class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelega
         } else {
             if radioPlayer.radioURL == nil {
                 if let url = nowPlayingData?.url {
+                    print("🎵 [CarPlay] Setting URL for first play: \(url)")
+                    radioPlayer.enableArtwork = true
                     radioPlayer.radioURL = url
                 } else {
                     print("❌ [CarPlay] No URL available for playback")
@@ -157,7 +158,6 @@ public class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelega
                 print("❌ [CarPlay] Failed to set up audio session or play:", error)
             }
         }
-        // Update button state after action
         DispatchQueue.main.async {
             self.updatePlayButtonState()
         }
@@ -178,10 +178,8 @@ public class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelega
             self?.handlePlayPause()
         }
         
-        // Since we can't set image in init, we'll need to update the template differently
         nowPlayingTemplate?.updateNowPlayingButtons([playPauseButton])
         
-        // Update MPNowPlayingInfoCenter to reflect the state visually
         var nowPlayingInfo = MPNowPlayingInfoCenter.default().nowPlayingInfo ?? [:]
         nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = isPlaying ? 1.0 : 0.0
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
