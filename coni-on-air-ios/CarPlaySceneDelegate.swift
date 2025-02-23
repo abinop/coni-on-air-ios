@@ -16,7 +16,6 @@ public class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelega
     private var radioPlayer = FRadioPlayer.shared
     private var databaseRef: DatabaseReference?
     private var nowPlayingData: NowPlayingData?
-    private var playButton: CPNowPlayingButton?
     private var isInitialSetup = true
 
     public func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene,
@@ -33,6 +32,9 @@ public class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelega
         print("🎵 [CarPlay] Stopping any existing playback")
         radioPlayer.stop()
         radioPlayer.delegate = self
+        
+        // Setup remote command center
+        setupRemoteCommandCenter()
     }
     
     public func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene,
@@ -52,20 +54,51 @@ public class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelega
         }
     }
     
+    private func setupRemoteCommandCenter() {
+        let commandCenter = MPRemoteCommandCenter.shared()
+        
+        // Remove all previous targets
+        commandCenter.playCommand.removeTarget(nil)
+        commandCenter.pauseCommand.removeTarget(nil)
+        commandCenter.togglePlayPauseCommand.removeTarget(nil)
+        
+        // Enable and handle play command
+        commandCenter.playCommand.isEnabled = true
+        commandCenter.playCommand.addTarget { [weak self] _ in
+            print("🎵 [CarPlay] Play command received")
+            self?.handlePlayPause()
+            return .success
+        }
+        
+        // Enable and handle pause command
+        commandCenter.pauseCommand.isEnabled = true
+        commandCenter.pauseCommand.addTarget { [weak self] _ in
+            print("🎵 [CarPlay] Pause command received")
+            self?.handlePlayPause()
+            return .success
+        }
+        
+        // Enable and handle toggle command
+        commandCenter.togglePlayPauseCommand.isEnabled = true
+        commandCenter.togglePlayPauseCommand.addTarget { [weak self] _ in
+            print("🎵 [CarPlay] Toggle play/pause command received")
+            self?.handlePlayPause()
+            return .success
+        }
+        
+        // Disable unnecessary commands
+        commandCenter.nextTrackCommand.isEnabled = false
+        commandCenter.previousTrackCommand.isEnabled = false
+        commandCenter.changePlaybackRateCommand.isEnabled = false
+    }
+    
     private func setupNowPlayingTemplate() {
         print("🎵 [CarPlay] Creating now playing template")
         nowPlayingTemplate = CPNowPlayingTemplate.shared
         nowPlayingTemplate?.isUpNextButtonEnabled = false
         nowPlayingTemplate?.isAlbumArtistButtonEnabled = false
         
-        // Create a play/pause toggle button
-        let playPauseButton = CPNowPlayingButton { [weak self] _ in
-            print("🎵 [CarPlay] Play/Pause button tapped via handler")
-            self?.handlePlayPause()
-        }
-        
-        nowPlayingTemplate?.updateNowPlayingButtons([playPauseButton])
-        self.playButton = playPauseButton
+        updatePlayButtonState()
         interfaceController?.setRootTemplate(nowPlayingTemplate!, animated: true)
         print("🎵 [CarPlay] Template setup complete - Current state - isPlaying: \(radioPlayer.isPlaying), state: \(radioPlayer.state.rawValue)")
     }
@@ -133,7 +166,7 @@ public class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelega
     }
     
     private func handlePlayPause() {
-        print("🎵 [CarPlay] Play button tapped")
+        print("🎵 [CarPlay] Play/Pause requested")
         print("🎵 [CarPlay] Current state - isPlaying: \(radioPlayer.isPlaying), state: \(radioPlayer.state.rawValue), URL: \(radioPlayer.radioURL?.absoluteString ?? "nil")")
         
         if radioPlayer.isPlaying {
@@ -164,25 +197,17 @@ public class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelega
             print("🎵 [CarPlay] Calling play()")
             radioPlayer.play()
         }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            print("🎵 [CarPlay] State after play/pause action - isPlaying: \(self.radioPlayer.isPlaying), state: \(self.radioPlayer.state.rawValue)")
-            self.updatePlayButtonState()
-        }
     }
     
     private func updatePlayButtonState() {
         let isPlaying = radioPlayer.isPlaying
         print("🎵 [CarPlay] Updating button - isPlaying: \(isPlaying), state: \(radioPlayer.state.rawValue)")
         
-        // Create a new play/pause toggle button
-        let playPauseButton = CPNowPlayingButton { [weak self] _ in
-            print("🎵 [CarPlay] Play/Pause button tapped via handler")
-            self?.handlePlayPause()
-        }
+        let buttons: [CPNowPlayingButton] = [
+            CPNowPlayingButton()
+        ]
         
-        nowPlayingTemplate?.updateNowPlayingButtons([playPauseButton])
-        self.playButton = playPauseButton
+        nowPlayingTemplate?.updateNowPlayingButtons(buttons)
         print("🎵 [CarPlay] Button updated - isPlaying: \(radioPlayer.isPlaying), state: \(radioPlayer.state.rawValue)")
     }
 }
